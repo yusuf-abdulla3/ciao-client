@@ -11,7 +11,7 @@ export default function SignUp() {
   const handleRegisterSubmit = (event) => {
     event.preventDefault();
     const reactRegData = {regFirstName, regLastName, regEmail, regPass};
-    const url = 'http://localhost:3001/api/signup/';
+    const url = `${process.env.SERVER_URL}/api/signup/`;
     axios.post(url, reactRegData)
     .then(res => {
       console.log('registration details send');

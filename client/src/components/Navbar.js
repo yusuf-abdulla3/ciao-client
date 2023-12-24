@@ -11,7 +11,7 @@ export default function Navbarpage(props) {
   const history = useHistory();
   const loggedOut = () => {
     console.log("clicked on testing");
-    const url = "http://localhost:3001/api/logout/";
+    const url = `${process.env.SERVER_URL}/api/logout/`;
     axios
       .get(url, { withCredentials: true })
       .then((res) => {

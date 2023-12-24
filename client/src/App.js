@@ -41,7 +41,7 @@ function App() {
 
   const checkLoggedIn = () => {
     console.log('clicked on testing');
-    const url = 'http://localhost:3001/api/login/';
+    const url = `${process.env.SERVER_URL}/api/login/`;
     axios.get(url, {withCredentials: true})
     .then(res => {
       console.log('login details send------', res.data.id);
@@ -128,9 +128,6 @@ function App() {
         </Switch>
        
       </div >
-
-
-
       
     </Router>
   );

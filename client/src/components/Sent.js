@@ -17,7 +17,7 @@ export default function Sent(props){
   }
   const sentCards = () => {
     console.log('clicked on sentcards');
-    const url = 'http://localhost:3001/api/sent/';
+    const url = `${process.env.SERVER_URL}/api/sent/`;
     const data = {userId, cardId};
     axios.post(url, data, {withCredentials: true})
     .then(res => {

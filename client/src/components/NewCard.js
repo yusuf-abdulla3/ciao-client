@@ -15,7 +15,7 @@ export default function NewCard (props) {
 
   const handleCardSubmit = async (event)  => {
     event.preventDefault();
-    const url = 'http://localhost:3001/api/newcard/';
+    const url = `${process.env.SERVER_URL}/api/newcard/`;
     console.log('userid', userId);
     const reactData = {title, fName, lName, email, userId }
     await axios.post(url, reactData)
