@@ -16,7 +16,7 @@ const useApplicationData = () => {
   useEffect(() => {
       axios({
               method: 'GET',
-              url: `${process.env.SERVER_URL}/api/users`,
+              url: `${process.env.REACT_APP_SERVER_URL}/api/users`,
           })
           .then(({
               data

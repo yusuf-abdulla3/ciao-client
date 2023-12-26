@@ -8,7 +8,7 @@ export default function ContributorForm (props){
   const [conName, setConName] = useState('');
   const [conEmail, setConEmail] = useState('');
   const [email, setEmail] = useState('');
-  const cardUrl = props.cardId ? `http://localhost:3000/card/${props.cardId}`: '';
+  const cardUrl = props.cardId ? `${process.env.REACT_APP_SERVER_URL}/card/${props.cardId}`: '';
   const [conSub, setConSub] = useState('You are invited for contribution');
   const [conText, setConText] = useState(cardUrl);
   const [isError, setIsError] = useState(false);
@@ -36,7 +36,7 @@ export default function ContributorForm (props){
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const url = 'http://localhost:3001/api/contributor/';
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/contributor/`;
     const cardId = props.cardId 
     const params= {cardId}
     const Data = {conName, conEmail, conText, email, params, conSub};
@@ -85,10 +85,6 @@ export default function ContributorForm (props){
           className="form-control form-controlmodal"
         />
         </div>
-        {/* <input type="text"
-          placeholder = "enter your message"
-          onChange = {(e)=>{setConText(e.target.value)}}
-        /> */}
         <button type="submit" class="btn btn-primary mybtncss"
         >invite</button>
       </form>

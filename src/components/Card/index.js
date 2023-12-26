@@ -21,28 +21,23 @@ export default function Card(props) {
 
 
   useEffect(()=>{
-    const getgifdata = `http://localhost:3001/api/gif`;
-    console.log('hello tesgskjdfh');
+    const getgifdata = `${process.env.REACT_APP_SERVER_URL}/api/gif`;
     const userId = localStorage.getItem('userId')
-    console.log('!!!&&&!!!', userId);
-    // const reactinfo = {userId}
     const params = {userId}
+    
     axios.get(getgifdata, {params, withCredentials: true})
     .then((response) => {
       console.log('d',response.data.posts);
       setPosts(response.data.posts);
     })
-    axios.get("http://localhost:3001/api/fetchData")
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/api/fetchData`)
      .then((response) => {
-      console.log('ppppppp+++', response.data.posts);
        setPosts(response.data.posts);
      })
   }, []);
-  console.log('posttesting', posts);
 
   return (
     <>
-     
       {posts.map(post => {
           
           return (
@@ -70,7 +65,6 @@ export default function Card(props) {
           )
         }
         )}
-      
     </>
   );
 }
@@ -81,7 +75,6 @@ const Gif = (props) => {
    
   <div className='testinggg'>
     <img src={post.gif} alt=""/>
-  
   </div>  
 
   )

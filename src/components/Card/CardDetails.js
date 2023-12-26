@@ -95,7 +95,7 @@ export default function CardDetails(props) {
 
   const getDetails = () => {
    
-    const url = 'http://localhost:3001/api/card/'+cardId
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/card/${cardId}`
     
     axios.get(url)
       .then(res => {
@@ -106,7 +106,7 @@ export default function CardDetails(props) {
       .catch(err => console.log('->-->--',err.data))
   }
   const getBg = () => {
-    const url = `http://localhost:3001/api/bgimg/${cardId}`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/bgimg/${cardId}`;
     
     axios.get(url)
       .then(res => {
@@ -175,8 +175,7 @@ export default function CardDetails(props) {
     setPostId(id);
     const reactData = {id}
     // setPosts((prev) => prev.filter((item) => item.id !== id));
-    const url = "http://localhost:3001/api/delete"
-    console.log(id);
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/delete`
     axios.post(url, reactData)
     .then(
       window.location.reload(false)
@@ -191,8 +190,7 @@ export default function CardDetails(props) {
     setIsLoading(true);
     
     try {
-      const results = await axios.post(`http://localhost:3001/api/bgimg`, {background, cardId});
-      console.log("RESULTS: ", results);
+      const results = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/bgimg`, {background, cardId});
       setData(results.data.results);
     } catch (err) { 
       console.log("THERE IS AN ERROR");
@@ -204,10 +202,8 @@ export default function CardDetails(props) {
 
   return (
     <>
-    
-     <CardContext.Provider value={contextValue}>
-       
-      {/* <p>This is bg url: {background}</p> */}
+     <CardContext.Provider value={contextValue}>       
+      
       <div
         className="background-image"
           style={{
@@ -228,9 +224,7 @@ export default function CardDetails(props) {
           </Modal.Header>
           <Modal.Body>
             <div className = "bgMenu">
-              {/* <Background cardId={cardId} setBackground={setBackground}/> */}
               <div className="bgListOfImages">{renderImages()}</div>
-                {/* <button onClick = {handlePostSubmit}>Choose Background</button> */}
                 <button onClick = {handleSubmit} className="btn btn-primary mybtncss">Selected </button><span> </span>
                 <button onClick = {getBg} className="btn btn-primary mybtncss">Add Bg</button>
                 <button variant="secondary" onClick={handleClose} className="closecss">
@@ -250,7 +244,6 @@ export default function CardDetails(props) {
               onHide={handleClose}
               backdrop="static"
               keyboard={false}
-              // className="bgModal"
             >
             <Modal.Header>
                 <Modal.Title>Upload Video</Modal.Title>
@@ -272,7 +265,6 @@ export default function CardDetails(props) {
                 onHide={handleClose}
                 backdrop="static"
                 keyboard={false}
-                // className="bgModal"
               >
               <Modal.Header>
                   <Modal.Title>Send Card</Modal.Title>
@@ -295,7 +287,6 @@ export default function CardDetails(props) {
                 onHide={handleClose}
                 backdrop="static"
                 keyboard={false}
-                // className="bgModal"
               >
               <Modal.Header>
                   <Modal.Title>Add Contributor</Modal.Title>
@@ -315,17 +306,12 @@ export default function CardDetails(props) {
    
 
             <div>
-              {/* <button variant="primary" onClick={handleClick1}>  */}
-              {/* {userId && <button className="addpostbtn" onClick={handleClick1}><i class="fa fa-solid fa-file"></i>Add Gif</button>} */}
-              {/* </button> */}
-              
 
               <Modal
                 show={showGif}
                 onHide={handleClose}
                 backdrop="static"
                 keyboard={false}
-                // className="bgModal"
               >
                 <Modal.Header>
                   <Modal.Title>Add Gif</Modal.Title>
@@ -347,7 +333,6 @@ export default function CardDetails(props) {
                 onHide={handleClose}
                 backdrop="static"
                 keyboard={false}
-                // className="bgModal"
               >
                 <Modal.Header>
                   <Modal.Title>Add Image</Modal.Title>
@@ -384,20 +369,12 @@ export default function CardDetails(props) {
         {userId && <button className="addpostbtn" onClick={handleSend}><i class="fa fa-solid fa-paper-plane"></i>Send</button>}
         {userId && <button className="addpostbtn" onClick={handleContri}><i class="fa fa-solid fa-user-plus"></i>Add Contributor</button>}
         {userId && {title} && <h2 className="titlecardwhile">{title}</h2>}
-        {/* <button onClick={handleBg}>Add Background</button> */}
-        {/* {showGif && <AddGif cardId={cardId} userId={userId} showGif={showGif} setShowGif={setShowGif}/>} */}
-        {/* {showImg && <AddImg cardId={cardId} userId={userId} setShowImg={setShowImg} showImg={showImg}/>} */}
-        {/* {showVideo && <AddVideo cardId={cardId} userId={userId}/>} */}
-        {/* {showSend && <SendCard cardId={cardId}/> } */}
-        {/* {showContri && <ContributorForm cardId={cardId}/> } */}
-        {/* {showBg && <Background setBackground={setBackground}/>} */}
         <div>
           {cardDetails.map(post => (
           
           
             <div key={post.id} className="postcss">
               
-              {/* <p>{post.id}</p> */}
               {post.gif && <img src={post.gif}/>}
               {post.image && <img src={post.image}/>}
               {post.video && <video controls>

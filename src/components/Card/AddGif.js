@@ -102,7 +102,7 @@ export default function AddGif(props) {
     e.preventDefault();
     console.log('@@#$tyui', cardId);
     const reactData = {selectedGif, selectText, selectedGifId, userId, cardId}
-    const url = 'http://localhost:3001/api/gif/'
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/gif/`
     let sendData = () => {
     axios.post(url, reactData)
       .then(res => console.log('data send',res))

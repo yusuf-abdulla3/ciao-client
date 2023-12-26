@@ -14,7 +14,8 @@ export default function Login(props) {
   const handleLoginSub = (event) => {
     event.preventDefault();
     const reactLogData = {logEmail, logPass};
-    const url = `${process.env.SERVER_URL}/api/login/`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
+    console.log(url)
     axios.post(url, reactLogData, {withCredentials: true})
     .then(res => {
       console.log('login details send');
@@ -37,7 +38,7 @@ export default function Login(props) {
     .catch(err => console.log('--->--',err))
 
     
-    history.push('/');  
+    // history.push('/');  
   }
   
 

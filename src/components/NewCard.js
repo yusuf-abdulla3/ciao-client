@@ -5,7 +5,6 @@ import {useParams} from "react-router-dom";
 export default function NewCard (props) {
   
   const { loginStatus, userId, setCardId } = props;
-  console.log('propropriopo',props)
   const [title, setTitle] = useState('');
   const [fName, setFName] = useState('');
   const [lName, setLName] = useState('');
@@ -15,27 +14,18 @@ export default function NewCard (props) {
 
   const handleCardSubmit = async (event)  => {
     event.preventDefault();
-    const url = `${process.env.SERVER_URL}/api/newcard/`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/newcard/`;
     console.log('userid', userId);
     const reactData = {title, fName, lName, email, userId }
     await axios.post(url, reactData)
     .then(res => {
-      console.log('card details send', res);
      
       setCardId(res.data.cardId);
       history.push(`/card/${res.data.cardId}`);
     })
     .catch(err => console.log('--->--',err.data))
-
-    
-    // history.push('/post');  
-    // history.push('/sent');  
-
-    
   }
   
-  
-
   return (
     <>
       <br/>
@@ -81,7 +71,6 @@ export default function NewCard (props) {
             />
           </div>
           <button type="submit" value="Create New Card" class="btn btn-primary mybtncss">Create</button>
-          {/* <input type="submit" value="Create New Card"></input> */}
         </form>   
       
       }

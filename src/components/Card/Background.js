@@ -22,7 +22,7 @@ const Background = (props) => {
   const handleShow = () => setShow(true);
 
   const getBg = () => {
-    const url = `http://localhost:3001/api/bgimg/${cardId}`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/bgimg/${cardId}`;
     
     axios.get(url)
       .then(res => {
@@ -115,7 +115,7 @@ const Background = (props) => {
     setIsLoading(true);
     
     try {
-      const results = await axios.post(`http://localhost:3001/api/bgimg`, {background, cardId});
+      const results = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/bgimg`, {background, cardId});
       console.log("RESULTS: ", results);
       setData(results.data.results);
     } catch (err) { 

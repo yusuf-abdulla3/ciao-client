@@ -14,7 +14,7 @@ export default function SendCard(props){
   const [email, setEmail] = useState({});
 
   const sendEmail = () => {
-    const url = 'http://localhost:3001/api/email/';
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/email/`;
     const reactData = {recipient, sender, subject, text}
     axios.post(url, reactData)
     .then(res => {
@@ -25,12 +25,6 @@ export default function SendCard(props){
       
       history.push(`/card/${props.cardId}`);
   }
-  
- 
-  // if(props.cardId){
-  //   setText(`http://localhost:3000/card/${props.cardId}`);
-  // }
-
   
   return (
     <div className="contact-form mycontformmodal">
@@ -62,11 +56,7 @@ export default function SendCard(props){
               className="form-control form-controlmodal"
               />
           </div>
-          {/* <label> Message </label> */}
-          {/* <br /> */}
-          {/* <textarea rows={3} value={text} 
-            onChange={e => setText(e.target.value)} >Hello</textarea>
-          <div  /> */}
+
           <button onClick={sendEmail} class="btn btn-primary mybtncss"> Send Email </button>
         </div>
     

@@ -6,16 +6,15 @@ import "../css/tooplate-style.css";
 import "../slick/slick.css";
 import "../slick/slick-theme.css";
 import { Navbar, Button, Nav, Container } from "react-bootstrap";
+
 export default function Navbarpage(props) {
   const { loginStatus, firstName, setLoginStatus, userId, sentCards } = props;
   const history = useHistory();
   const loggedOut = () => {
-    console.log("clicked on testing");
-    const url = `${process.env.SERVER_URL}/api/logout/`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/logout/`;
     axios
       .get(url, { withCredentials: true })
       .then((res) => {
-        console.log("login details send", res);
         setLoginStatus(false);
         localStorage.removeItem("userId");
       })
@@ -37,7 +36,6 @@ export default function Navbarpage(props) {
                 <Nav.Link href="/createcard">Create Card</Nav.Link>
                 {loginStatus && (
                   <>
-                    {/* <li>logged in as -- {firstName}</li> */}
                     <Nav.Link href="/sent/" onClick={sentCards}>
                       List
                     </Nav.Link>
@@ -63,29 +61,6 @@ export default function Navbarpage(props) {
           </div>
         </Container>
       </Navbar>
-
-      {/* <nav className="navbar">
-        <div>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/createcard'>Create Card</Link></li>
-            {loginStatus &&
-              <>
-              <li>logged in as -- {firstName}</li>
-              <li><Link to='/sent/' onClick={sentCards}>List</Link></li>
-              <li><Link onClick={loggedOut}>Logout</Link></li>
-              </>
-            }
-            {!loginStatus &&
-              <>
-                <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/signup'>SignUp</Link></li>
-              </> 
-            }
-            
-          </ul>
-        </div>
-      </nav> */}
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function AddVideo(props) {
     
      
     try {
-      const url = "http://localhost:3001/api/uploads";
+      const url = `${process.env.REACT_APP_SERVER_URL}/api/uploads`;
       // const reactData = {cardId, userId};
       // console.log('reactdata in video', reactData);
       const res = await axios.post(url, formData, {

@@ -112,7 +112,7 @@ export default function AddImg(props) {
     // const url = "http://localhost:3001/api/img";
     
     axios
-      .post("http://localhost:3001/api/img/", reactData)
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/img/`, reactData)
       .then((res) => console.log("data Img send", res))
       .catch((err) => console.log("--->--", err.data));
   

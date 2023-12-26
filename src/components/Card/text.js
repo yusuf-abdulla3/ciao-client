@@ -13,9 +13,8 @@ const handleText = (e) => {
 }
 const handlePostSubmit = (e) => {
   e.preventDefault();
-  console.log('@@#$tyui');
   const reactData = {selectText}
-  const url = 'http://localhost:3001/api/text/'
+  const url = `${process.env.REACT_APP_SERVER_URL}/api/text/`
   let sendData = () => {
     axios.post(url, reactData)
       .then(res => console.log('data send'))
@@ -29,15 +28,6 @@ const handlePostSubmit = (e) => {
     history.push('/createcard');
   }
 return(
-// {/* <div>
-//   <form>
-// <textarea type="text" onChange = {handleText} placeholder = "Enter Message here" /> 
-// <div>
-//  <button type="button" onClick={handlePostSubmit}> Post</button>
-//   <button>Cancel</button>
-// </div>
-// </form>
-// </div> */}
 <>
 <Form>
     <Form.FloatingLabel controlId="floatingTextarea2" className="mb-3" label="Message">
@@ -49,7 +39,6 @@ return(
     />
  </Form.FloatingLabel>
 <div>
-  {/* <button type="button" onClick={handlePostSubmit}> Post</button> */}
  <Button 
  variant="outline-primary" onClick={handlePostSubmit}>
    Post
