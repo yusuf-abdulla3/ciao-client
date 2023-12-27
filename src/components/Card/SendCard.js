@@ -57,7 +57,7 @@ export default function SendCard(props){
               />
           </div>
 
-          <button onClick={sendEmail} class="btn btn-primary mybtncss"> Send Email </button>
+          <button onClick={sendEmail} className="btn btn-primary mybtncss"> Send Email </button>
         </div>
     
   );

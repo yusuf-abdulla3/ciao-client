@@ -150,7 +150,7 @@ export default function AddImg(props) {
             className="form-control"
           />
        </div>
-        <button type="submit" value="Submit" class="btn btn-primary mybtncss">Submit</button>
+        <button type="submit" value="Submit" className="btn btn-primary mybtncss">Submit</button>
         {/* /* <input type="submit" value="Cancel" onClick={onCancel}></input> */}
 
       </form> 

@@ -85,7 +85,7 @@ export default function ContributorForm (props){
           className="form-control form-controlmodal"
         />
         </div>
-        <button type="submit" class="btn btn-primary mybtncss"
+        <button type="submit" className="btn btn-primary mybtncss"
         >invite</button>
       </form>
       <div>{renderError()}</div>

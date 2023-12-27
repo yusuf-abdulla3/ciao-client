@@ -361,13 +361,13 @@ export default function CardDetails(props) {
         
       
         {userId && <button variant="primary" onClick={handleShow} className={"addpostbtn"}>
-        <i class="fa fa-regular fa-clone"></i> Choose BG
+        <i className="fa fa-regular fa-clone"></i> Choose BG
           </button>}
-        {userId && <button className="addpostbtn" onClick={handleClick1}><i class="fa fa-solid fa-file"></i>Add Gif</button>}
-        {userId && <button className="addpostbtn" onClick={handleClick2}><i class="fa fa-solid fa-image"></i>Add Img</button>}
-        {userId && <button className="addpostbtn" onClick={handleClick3}><i class="fa fa-solid fa-play"></i>Add video</button>}
-        {userId && <button className="addpostbtn" onClick={handleSend}><i class="fa fa-solid fa-paper-plane"></i>Send</button>}
-        {userId && <button className="addpostbtn" onClick={handleContri}><i class="fa fa-solid fa-user-plus"></i>Add Contributor</button>}
+        {userId && <button className="addpostbtn" onClick={handleClick1}><i className="fa fa-solid fa-file"></i>Add Gif</button>}
+        {userId && <button className="addpostbtn" onClick={handleClick2}><i className="fa fa-solid fa-image"></i>Add Img</button>}
+        {userId && <button className="addpostbtn" onClick={handleClick3}><i className="fa fa-solid fa-play"></i>Add video</button>}
+        {userId && <button className="addpostbtn" onClick={handleSend}><i className="fa fa-solid fa-paper-plane"></i>Send</button>}
+        {userId && <button className="addpostbtn" onClick={handleContri}><i className="fa fa-solid fa-user-plus"></i>Add Contributor</button>}
         {userId && {title} && <h2 className="titlecardwhile">{title}</h2>}
         <div>
           {cardDetails.map(post => (
@@ -382,8 +382,8 @@ export default function CardDetails(props) {
               </video>}
               
               <p className='text'>{post.text}</p>
-              <p className="createdbycss">Posted By: <a class="name"> {post.first_name}</a></p>
-              {userId && <span onClick={(event)=>{removePost(event,post.id)}} ><i class="fa fa-solid fa-trash"></i></span>}
+              <p className="createdbycss">Posted By: <a className="name"> {post.first_name}</a></p>
+              {userId && <span onClick={(event)=>{removePost(event,post.id)}} ><i className="fa fa-solid fa-trash"></i></span>}
             </div>
             
           ))

@@ -70,7 +70,7 @@ export default function NewCard (props) {
               className="form-control"
             />
           </div>
-          <button type="submit" value="Create New Card" class="btn btn-primary mybtncss">Create</button>
+          <button type="submit" value="Create New Card" className="btn btn-primary mybtncss">Create</button>
         </form>   
       
       }

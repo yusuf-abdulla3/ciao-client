@@ -81,7 +81,7 @@ export default function Home() {
       </ol>  
       </div>
     </div>
-    <div class="footer">
+    <div className="footer">
       <p>&copy; 2021 Copy Rights Reserved by Akhila, Shakirat and Yusuf.  </p>
     </div>
     </div> 

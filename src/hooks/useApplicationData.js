@@ -21,7 +21,7 @@ const useApplicationData = () => {
           .then(({
               data
           }) => {
-              console.log(data);
+              console.log("check: " + data);
               dispatch({
                   type: SET_USERS,
                   users: data

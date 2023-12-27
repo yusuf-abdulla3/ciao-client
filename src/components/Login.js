@@ -61,7 +61,7 @@ export default function Login(props) {
                       className="form-control"
                     />
                   </div>
-                  <button type="submit" value="Login" class="btn btn-primary mybtncss">Login</button>
+                  <button type="submit" value="Login" className="btn btn-primary mybtncss">Login</button>
                 </form>
               </div>
             </div>

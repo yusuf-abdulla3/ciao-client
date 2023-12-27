@@ -67,7 +67,7 @@ export default function SignUp() {
           <button
             type="submit"
             value="Sign Up"
-            class="btn btn-primary mybtncss"
+            className="btn btn-primary mybtncss"
           >
             Sign Up
           </button>
