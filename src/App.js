@@ -41,6 +41,7 @@ function App() {
     console.log(url)
     axios.get(url, {withCredentials: true})
     .then(res => {
+      console.log(res.data)
       console.log('login details send------', res.data.id);
       setLoginStatus(true);
       setFirstName(res.data.firstName);
