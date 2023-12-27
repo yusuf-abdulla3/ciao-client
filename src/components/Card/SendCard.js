@@ -6,7 +6,7 @@ import axios from "axios";
 export default function SendCard(props){
   
   const history = useHistory();  
-  const cardUrl = props.cardId ? `${REACT_APP_CLIENT_URL}/card/${props.cardId}`: '';
+  const cardUrl = props.cardId ? `${process.env.REACT_APP_CLIENT_URL}/card/${props.cardId}`: '';
   const [recipient, setRecipient] = useState('');
   const [sender, setSender] = useState('');
   const [subject, setSubject] = useState('');
