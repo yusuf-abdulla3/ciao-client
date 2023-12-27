@@ -17,7 +17,7 @@ export default function Login(props) {
     const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
     axios.post(url, reactLogData, {withCredentials: true})
     .then(res => {
-
+      console.log(res)
       if(!res.data.message){
         console.log(res.data.rows[0])
         setFirstName(res.data.rows[0].first_name)
@@ -33,7 +33,7 @@ export default function Login(props) {
     .catch(err => console.log('--->--',err))
 
     
-    history.push('/');  
+    // history.push('/');  
   }
   
 
