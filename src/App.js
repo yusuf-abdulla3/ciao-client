@@ -68,7 +68,7 @@ function App() {
     useEffect(()=>{
       checkLoggedIn();
       console.log('checking useeffect');
-    },[checkLoggedIn])
+    },[])
   
   return (
     <Router>
