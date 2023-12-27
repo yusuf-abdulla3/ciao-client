@@ -25,18 +25,14 @@ import Received from './components/Received';
 import axios from 'axios';
 import CardDetails from './components/Card/CardDetails';
 import Contributors from './components/Card/Contributors';
-import {Container} from 'react-bootstrap';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// axios.defaults.withCredentials = true;
 
 function App() {
   const [loginStatus, setLoginStatus] = useState(false);
   const [ firstName, setFirstName] = useState('');
   const [ userId, setUserId ] = useState('');
   const [ cardId, setCardId ] = useState('');
-  const [ sentCardsArr, setSentCardsArr] = useState([]);
-  // const { id } = useParams();
+  // const [ sentCardsArr, setSentCardsArr] = useState([]);
   
 
   const checkLoggedIn = () => {
@@ -66,7 +62,7 @@ function App() {
     state,
     dispatch
   } = useApplicationData();
-    const userList = state.users.map((user) => (<li key={user.id} > {user.first_name} {user.last_name} {user.email} </li> ));
+    // const userList = state.users.map((user) => (<li key={user.id} > {user.first_name} {user.last_name} {user.email} </li> ));
 
     useEffect(()=>{
       checkLoggedIn();
