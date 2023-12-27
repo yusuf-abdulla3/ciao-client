@@ -44,23 +44,23 @@ export default function Home() {
     
     <div>
       <div className="thumb">
-        <a href='http://localhost:3000/createcard'>
+        <a href={process.env.REACT_APP_CLIENT_URL + '/createcard'}>
           <img src="images/thankyou.jpg" alt="thank you"/>
         </a>
       </div>
       
       <div className="thumb">
-        <a href='http://localhost:3000/createcard'>
+        <a href={process.env.REACT_APP_CLIENT_URL + '/createcard'}>
           <img src="images/con1.png" alt="goodluck"/>
         </a>
       </div>
       <div className="thumb">
-      <a href='http://localhost:3000/createcard'>
+      <a href={process.env.REACT_APP_CLIENT_URL + '/createcard'}>
         <img src="images/luck.jpg" alt="goodluck"/>
       </a>
       </div>
       <div className="thumb">
-        <a href='http://localhost:3000/createcard'>
+        <a href={process.env.REACT_APP_CLIENT_URL + '/createcard'}>
           <img src="images/getwellsoon.png" alt="get well soon"/>
         </a>
       </div>

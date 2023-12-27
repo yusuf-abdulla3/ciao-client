@@ -117,7 +117,7 @@ export default function AddImg(props) {
       .catch((err) => console.log("--->--", err.data));
   
     
-    window.location.href = `http://localhost:3000/card/${cardId}`;
+    window.location.href = `${process.env.REACT_APP_CLIENT_URL}/card/${cardId}`;
     // window.location.reload(false);
     // setShowImg(false);
     // history.push("/createcard");
