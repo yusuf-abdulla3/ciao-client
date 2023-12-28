@@ -18,12 +18,12 @@ export default function Login(props) {
     axios.post(url, reactLogData, {withCredentials: true})
     .then(res => {
       console.log(res)
-      if(!res.data.message){
+      if(!res.data.message || res.data.message !== "Wrong username/password combination!"){
         console.log(res.data.rows[0])
         setFirstName(res.data.rows[0].first_name)
         setLoginStatus(true);
         setUserId(res.data.rows[0].id)
-      }else{
+      }else if (res.data.message === "Wrong username/password combination!"){
         console.log(res.data.message);
         setLoginStatus(false);
         setFirstName('');
