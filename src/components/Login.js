@@ -19,12 +19,13 @@ export default function Login(props) {
     .then(res => {
       console.log(res)
       if(!res.data.message || res.data.message !== "Wrong username/password combination!"){
-        console.log(res.data.rows[0])
+        console.log("TEST1",res.data.rows[0] )
+
         setFirstName(res.data.rows[0].first_name)
         setLoginStatus(true);
         setUserId(res.data.rows[0].id)
       }else if (res.data.message === "Wrong username/password combination!"){
-        console.log(res.data.message);
+        console.log("TEST2",res.data.message )
         setLoginStatus(false);
         setFirstName('');
       }
