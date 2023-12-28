@@ -50,9 +50,9 @@ function App() {
       console.log('%%%',userId);
     })
     .catch(e => {
-      setLoginStatus(false);
-      setFirstName('');
-      console.log('buggggg');
+      // setLoginStatus(false);
+      // setFirstName('');
+      // console.log('buggggg');
     })
   }
   
