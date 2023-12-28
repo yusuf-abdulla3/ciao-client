@@ -50,9 +50,9 @@ function App() {
       console.log('%%%',userId);
     })
     .catch(e => {
-      // setLoginStatus(false);
-      // setFirstName('');
-      // console.log('buggggg');
+      setLoginStatus(false);
+      setFirstName('');
+      console.log('buggggg');
     })
   }
   
@@ -68,7 +68,7 @@ function App() {
     useEffect(()=>{
       checkLoggedIn();
       console.log('checking useeffect');
-    },[])
+    },[checkLoggedIn])
   
   return (
     <Router>

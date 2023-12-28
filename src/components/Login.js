@@ -24,6 +24,7 @@ export default function Login(props) {
         setFirstName(res.data.rows[0].first_name)
         setLoginStatus(true);
         setUserId(res.data.rows[0].id)
+        localStorage.setItem("userId", res.data.rows[0].id)
       }else if (res.data.message === "Wrong username/password combination!"){
         console.log("TEST2",res.data.message )
         setLoginStatus(false);
