@@ -37,7 +37,7 @@ function App() {
 
   const checkLoggedIn = () => {
     console.log('clicked on testing');
-    const url = `${process.env.REACT_APP_SERVER_URL}/api/login`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/api/login/`;
     console.log(url)
     axios.get(url, {withCredentials: true})
     .then(res => {
